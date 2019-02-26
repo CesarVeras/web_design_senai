@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" dir="ltr">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Conversor de Bases</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+    <h1>Conversor de Bases</h1>
+    <div class="formulario">
+        <label for="input1" class="esquerda">Base 1</label>
+        <label for="input2" class="direita">Base 2</label>
+        <select name="base1" id="select1" class="esquerda">
+            <option value="" class="2">Binário</option>
+            <option value="" class="8">Octal</option>
+            <option value="" class="10" selected>Decimal</option>
+            <option value="" class="16">Hexadecimal</option>
+        </select>
+        <select name="base2" id="select2" class="direita">
+            <option value="" class="2">Binário</option>
+            <option value="" class="8">Octal</option>
+            <option value="" class="10">Decimal</option>
+            <option value="" class="16">Hexadecimal</option>
+        </select>
+        <label for="" class="centro">=</label>
+        <input type="text" id="input1" class="esquerda">
+        <input type="text" id="input2" class="direita" readonly="true">
+    </div>
+    <script src="js/acoes.js"></script>
+</body>
+</html>
