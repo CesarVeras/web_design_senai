@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" dir="ltr">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Produtos</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 5px 20px;
+        }
+
+        form {
+            display: grid;
+            grid-gap: 0 10px;
+            grid-template-columns: repeat(2, minmax(auto, 150px))
+        }
+    </style>
+</head>
+<body>
+    <h1>Produtos</h1>
+    <form action="">
+        <label for="produto">Produto:</label>
+        <input type="text" id="produto" placeholder="Nome do produto">
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" placeholder="1" min="0" step="1">
+        <label for="precoUnitario">Preço Unitário:</label>
+        <input type="text" id="precoUnitario" placeholder="R$20,00">
+        <label for="precoTotal">Preço Total:</label>
+        <input type="text" id="precoTotal" placeholder="R$50,00">
+    </form>
+</body>
+</html>

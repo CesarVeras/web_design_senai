@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" dir="ltr">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+    <h1>Cadastro de Usuário</h1>
+    <hr>
+    <ul>
+        <li><a href="login.html">Login</a></li>
+        <li class="selected"><a href="usuario.html">Cadastro de Usuário</a></li>
+        <li><a href="lista.html">Lista de Usuários</a></li>
+    </ul>
+    <form action="" class="form-cadastro">
+        <div class="subform">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" placeholder="Seu nome">
+
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" id="sobrenome" placeholder="Seu sobrenome">
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" placeholder="Rua X, Casa XYZ">
+
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade">
+
+            <label for="estado">Estado:</label>
+            <select name="selectEstado" id="estado">
+                <option value="sc">SC</option>
+                <option value="rs">RS</option>
+                <option value="sp">SP</option>
+                <option value="rj">RJ</option>
+                <option value="pr">PR</option>
+                <option value="am">AM</option>
+                <option value="ce">CE</option>
+            </select>
+
+            <fieldset>
+                <legend><strong>Sexo</strong></legend>
+                <div class="radios">
+                    <input type="radio" name="sexo" value="m"><span>Masculino</span>
+                    <input type="radio" name="sexo" value="f"><span>Feminino</span>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="subform">
+            <label for="login">Login:</label>
+            <input type="text" id="login" placeholder="Login">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="exemplo@contato.com.br">
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha">
+
+            <fieldset>
+                <legend><strong>Tipo de Usuário</strong></legend>
+                <div class="checkbox">
+                    <input type="checkbox" name="administrador" value="adm"><span>Administrador</span>
+                    <input type="checkbox" name="usuario" value="usu"><span>Usuário</span>
+                    <input type="checkbox" name="visitante" value="vis"><span>Visitante</span>
+                </div>
+            </fieldset>
+
+            <label for="observacao">Observação sobre o Usuário</label>
+            <textarea name="oberservacao" id="obs" cols="80" rows="4"></textarea>
+        </div>
+        <!-- botões -->
+        <div class="botoes">
+            <button type="submit">Salvar</button>
+            <button type="Reset">Limpar</button>
+        </div>
+    </form>
+</body>
+
+</html>
