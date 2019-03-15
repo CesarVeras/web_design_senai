@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+h1, p {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto auto;
+}
+
+table * {
+    padding: 20px;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+/* Media Queries */
+
+@media(max-width: 768px) {
+
+}

@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+:root {
+    --sombra: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    --laranja: #fd6e1b;
+    --cinza: #333;
+}
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr repeat(2, 2fr);
+    grid-template-areas: 
+        "header header    header"
+        "aside  subtitle  subtitle"
+        "aside  books     books"
+        ".      books     books"
+        "footer footer    footer";
+}
+
+body > * {
+    padding: 20px;
+}
+
+header {
+    grid-area: header;
+    background-color: var(--cinza);
+    border-bottom: 4px solid var(--laranja);
+    padding: 20px 40px;
+}
+
+header .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+header h1 {
+    text-transform: uppercase;
+    color: #fff;
+}
+
+header h1 span {
+    color: var(--laranja);
+}
+
+header form {
+    align-self: center;
+    justify-self: right;
+}
+
+header form input,
+header form button {
+    height: 30px;
+}
+
+header form button {
+    text-transform: uppercase;
+    background-color: var(--laranja);
+    border: 0;
+}
+
+#subjects {
+    grid-area: aside;
+    justify-self: center;
+    margin-top: 20px;
+}
+
+#subtitle {
+    grid-area: subtitle;
+}
+
+#main {
+    grid-area: books;
+}
+
+footer {
+    background-color: var(--cinza);
+    grid-area: footer;
+}
+
