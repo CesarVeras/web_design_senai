@@ -5,48 +5,47 @@
     <meta charset="UTF-8" dir="ltr">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Ler Mais - Livrarias </title>
+    <link rel="icon" href="images/icon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <header>
-        <div class="container">
-            <h1><span>Ler</span> Mais</h1>
-            <form action="">
-                <input type="text" placeholder="Buscar por um livro...">
-                <button type="submit">Buscar</button>
-            </form>
-        </div>
+        <h1><span>Ler</span> Mais</h1>
+        <form action="">
+            <input type="text" placeholder="Buscar por um livro...">
+            <button type="submit"><i class="fas fa-search"></i> Buscar</button>
+        </form>
     </header>
-    <section id="subtitle">
-        <h3>Destaques do mês</h3>
-    </section>
-    <aside id="subjects">
-        <div class="book-subject">
-            <div class="options">
-                <input type="radio" name="genero">
-                Ação
-            </div>
-            <div class="options">
-                <input type="radio" name="genero">
-                Aventura
-            </div>
-            <div class="options">
-                <input type="radio" name="genero">
-                Romance
-            </div>
-            <div class="options">
-                <input type="radio" name="genero">
-                Técnico
-            </div>
+    <aside id="tipos">
+        <div class="options">
+            <input id="r1" type="radio" name="genero" checked>
+            <label for="r1">Ação</label>
+        </div>
+        <div class="options">
+            <input id="r2" type="radio" name="genero">
+            <label for="r2">Aventura</label>
+        </div>
+        <div class="options">
+            <input id="r3" type="radio" name="genero">
+            <label for="r3">Romance</label>
+        </div>
+        <div class="options">
+            <input id="r4" type="radio" name="genero">
+            <label for="r4">Técnico</label>
         </div>
     </aside>
-    <section id="main">
-        <div class="shop-window">
+    <section id="vitrine-livros">
+        <h3>Destaques do mês</h3>
+        <div class="container">
             <div class="book">
-                <img src="" alt="">
-                <p class="title">Book 1</p>
+                <img src="images/livro1.png" alt="">
+                <p class="title">
+                    Constituição da Rep...
+                </p>
                 <p class="description">
                     Lorem ipsum dolor sit amet consectetur
                     adipisicing elit. Qui, sit!
@@ -54,8 +53,10 @@
                 <p class="price">R$ 40,00</p>
             </div>
             <div class="book">
-                <img src="" alt="">
-                <p class="title">Book 2</p>
+                <img src="images/livro2.jpg" alt="">
+                <p class="title">
+                    CPC Saraiva
+                </p>
                 <p class="description">
                     Lorem ipsum dolor sit amet consectetur
                     adipisicing elit. Qui, sequi.
@@ -63,8 +64,10 @@
                 <p class="price">R$ 25,99</p>
             </div>
             <div class="book">
-                <img src="" alt="">
-                <p class="title">Book 3</p>
+                <img src="images/livro3.png" alt="">
+                <p class="title">
+                    Manual de Direito Civil
+                </p>
                 <p class="description">
                     Lorem ipsum dolor, sit amet consectetur
                     adipisicing elit. Aliquid, quasi.
@@ -72,8 +75,10 @@
                 <p class="price">R$ 12,90</p>
             </div>
             <div class="book">
-                <img src="" alt="">
-                <p class="title">Book 4</p>
+                <img src="images/livro4.png" alt="">
+                <p class="title">
+                    Vade Mecum Saraiva
+                </p>
                 <p class="description">
                     Lorem ipsum dolor sit, amet consectetur
                     adipisicing elit. Repudiandae, sed.
@@ -81,32 +86,40 @@
                 <p class="price">R$ 34,49</p>
             </div>
             <div class="book">
-                <img src="" alt="">
-                <p class="title">Book 5</p>
+                <img src="images/livro5.jpg" alt="">
+                <p class="title">
+                    Esquematizado
+                </p>
                 <p class="description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, hic.
                 </p>
                 <p class="price">R$ 12,50</p>
             </div>
             <div class="book">
-                <img src="" alt="">
-                <p class="title">Book 6</p>
+                <img src="images/livro6.jpg" alt="">
+                <p class="title">
+                    OAB: Como Passar
+                </p>
                 <p class="description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, ducimus.
                 </p>
                 <p class="price">R$ 120,00</p>
             </div>
             <div class="book">
-                <img src="" alt="">
-                <p class="title">Book 7</p>
+                <img src="images/livro7.png" alt="">
+                <p class="title">
+                    Código de Prote...
+                </p>
                 <p class="description">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, fuga?
                 </p>
                 <p class="price">R$ 79,00</p>
             </div>
             <div class="book">
-                <img src="" alt="">
-                <p class="title">Book 8</p>
+                <img src="images/livro8.jpg" alt="">
+                <p class="title">
+                    Direito Civil Brasileiro
+                </p>
                 <p class="description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, ratione?
                 </p>
