@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 1</title>
+    <style>
+        body {
+            width: 60vw;
+            max-width: 700px;
+            margin: 0 auto;
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: auto repeat(3, 1fr);
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            grid-column: 1 / span 4;
+        }
+
+        input {
+            grid-column: 3 / span 2;
+        }
+
+        label {
+            grid-column: 1 / span 2;
+        }
+
+        button {
+            padding: 10px 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <h1>Calculo de Desconto</h1>
+        <label for="valor">Valor do Produto</label>
+        <input type="number" name="valorProduto" id="valor">
+        <label for="desconto">Porcento de Desconto</label>
+        <input type="number" name="desconto" id="desconto" min="1" max="99">
+        <label for="vFinal">Valor Final do Produto</label>
+        <input type="text" name="vFinalinal" id="vFinal" disabled>
+    </div>
+    <button onclick="calcularDesconto()" id="btn1">Calcular Desconto</button>
+    <button onclick="limparInputs()" id="btn2">Limpar</button>
+
+    <script>
+        let preco = document.getElementById('valor');
+        let desconto = document.getElementById('desconto');
+        let vFinal = document.getElementById('vFinal');
+
+        function calcularDesconto() {
+            let v1 = parseInt(preco.value);
+            let v2 = parseInt(desconto.value);
+            if (!validaInputs()) {
+                vFinal.value = v1 - (v1 * (v2 / 100));
+            }
+        }
+
+        function limparInputs() {
+            preco.value = '';
+            desconto.value = '';
+            vFinal.value = '';
+        }
+
+        function validaInputs() {
+            return preco.value == "" || desconto.value == "";
+        }
+    </script>
+</body>
+
+</html>
