@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 5px 20px;
+    font-family: 'Noto Sans','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+form {
+    background-color: #dad8d8;
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 1em;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 100px repeat(1, 1fr) 200px;
+    grid-gap: 5px 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+form label {
+    justify-self: right;
+}
+
+form input:hover + span,
+form input:focus + span {
+    opacity: 1;
+}
+
+form span {
+    opacity: 0;
+    transition: opacity .3s ease-in;
+}
