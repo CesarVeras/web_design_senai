@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu sem JavaScript</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="content">
+        <header>
+            <h1>Site com Menu lateral sem JavaScript</h1>
+        </header>
+        <section>
+            <p>
+                Para abrir o menu basta pressionar 
+                <label for="close-menu">&#9776;</label>
+            </p>
+        </section>
+    </div>
+    <nav>
+        <div class="menu-wrapper">
+            <div id="menu">
+                <input type="checkbox" name="close" id="close-menu">
+                <label for="close-menu">&times;</label>
+                <div id="menu-links">
+                    <div class="menu-over-layer"></div>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Empresa</a></li>
+                        <li><a href="#">Produtos</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Eventos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+
+</html>
