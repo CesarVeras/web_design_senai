@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+	<head>
+		<meta charset="utf-8" />
+		<!--DEFINIR A VIEWPORT COM BASE NO TAMANHO DO DISPOSITIVO-->
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- BIBLIOTECA DE FUNÇÕES DEFINIDAS EM JAVASCRIPT -->
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="bootstrap-4.0.0/js/bootstrap.min.js"></script>
+		<!-- CHAMADA DOS ESTILOS CSS bootstrap e estilo próprio -->
+		<link rel="stylesheet" href="bootstrap-4.0.0/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/estilo.css" />
+
+		<title>Funcionário</title>
+	</head>
+
+	<body>
+		<!-- container do bootstrap-->
+		<div class="container">
+			<nav>
+				<div class="container-fluid" id="menu">
+					<button class="btn-fechar">&times;</button>
+					<ul>
+						<li><a href="#">Salário</a></li>
+						<li><a href="#">Novo</a></li>
+						<li><a href="#">Listar</a></li>
+					</ul>
+				</div>
+			</nav>
+
+			<button class="btn-toggle">&#9776;</button>
+			<!-- Formulário-->
+			<div class="container-fluid" id="formulario">
+				<h4><i class="fa fa-calculator"></i> Cálculo do Salário do Funcionário</h4>
+				<label><i class="fa fa-user"></i> Nome</label>
+				<input type="text" class="form-control" id="nome" />
+				<br />
+
+				<label><i class="fa fa-money"></i> Valor da Hora</label>
+				<input type="number" class="form-control numero" id="valorHr" />
+				<br />
+
+				<label><i class="fa fa-money"></i> Horas Trabalhadas</label>
+				<input type="number" class="form-control numero" id="hrsTrabalhadas" />
+				<br />
+
+				<label><i class="fa fa-money"></i> Salário Bruto</label>
+				<input type="text" class="form-control numero" id="salarioBruto" disabled />
+				<br />
+
+				<label><i class="fa fa-money"></i> Valor do IRRF</label>
+				<input
+					type="text"
+					class="form-control numero"
+					name="valorIRRF"
+					id="valorIRRF"
+					disabled
+				/>
+				<br />
+
+				<label><i class="fa fa-money"></i> Gratificação</label>
+				<input
+					type="text"
+					class="form-control numero"
+					name="gratificacao"
+					id="gratificacao"
+					disabled
+				/>
+
+				<label><i class="fa fa-money"></i> Salário Liquido</label>
+				<input
+					type="text"
+					class="form-control numero"
+					name="salarioLiquido"
+					id="salarioLiquido"
+					disabled
+				/>
+
+				<button class="btn btn-success" onclick="calcularSalario()">
+					Calcular
+				</button>
+				<button class="btn btn-light" onclick="limpar()">
+					Limpar
+				</button>
+			</div>
+			<div id="mensagem" class="alert alert-danger"></div>
+		</div>
+		<script type="text/javascript">
+			var nav = document.querySelector("nav");
+			function calcularSalario() {
+				//recuperar
+				var valor = document.getElementById("valorHr").value;
+				var horasTabalhadas = document.getElementById("hrsTrabalhadas").value;
+				var valorIRRF;
+				var gratificacao = 0;
+				var salarioLiquido = 0;
+				//verificar se os campos foram preenchidos corretamente
+				if (valor > 0 && horasTabalhadas > 0) {
+					var salarioBruto = valor * horasTabalhadas;
+					document.getElementById("salarioBruto").value = salarioBruto.toFixed(2);
+					if (salarioBruto <= 1903.98) {
+						valorIRRF = 0;
+					} else if (salarioBruto > 1903.98 && salarioBruto <= 2826.65) {
+						valorIRRF = salarioBruto * 0.075;
+					} else if (salarioBruto > 2826.65 && salarioBruto <= 3751.05) {
+						valorIRRF = salarioBruto * 0.15;
+					} else if (salarioBruto > 3751.05 && salarioBruto <= 4664.68) {
+						valorIRRF = salarioBruto * 0.225;
+					} else {
+						valorIRRF = salarioBruto * 0.275;
+					}
+					if (horasTabalhadas > 160) {
+						gratificacao = salarioBruto * 0.15;
+					}
+					salarioLiquido = salarioBruto - valorIRRF + gratificacao;
+					document.getElementById("valorIRRF").value = valorIRRF.toFixed(2);
+					document.getElementById("gratificacao").value = gratificacao.toFixed(2);
+					document.getElementById("salarioLiquido").value = salarioLiquido.toFixed(2);
+					mostrarSucesso("Calculo realizado com sucesso!");
+				} else {
+					mostrarErro("Informe o valor da hora e a quantidade de horas trabalhadas");
+				}
+			}
+
+			function mostrarErro(msg) {
+				var div = document.getElementById("mensagem");
+				div.innerText = msg;
+				div.classList.remove("alert-success");
+				div.classList.add("alert-danger");
+				$("#mensagem")
+					.slideDown(400)
+					.delay(4000)
+					.slideUp(400);
+			}
+
+			function mostrarSucesso(msg) {
+				var div = document.getElementById("mensagem");
+				div.innerText = msg;
+				div.classList.remove("alert-danger");
+				div.classList.add("alert-success");
+				$("#mensagem")
+					.slideDown(400)
+					.delay(2000)
+					.slideUp(400);
+			}
+			function limpar() {
+				//Limpar os campos
+				document.getElementById("nome").value = "";
+				document.getElementById("valorHr").value = "";
+				document.getElementById("valorIRRF").value = "";
+				document.getElementById("gratificacao").value = "";
+				document.getElementById("hrsTrabalhadas").value = "";
+				document.getElementById("salarioBruto").value = "";
+				document.getElementById("salarioLiquido").value = "";
+			}
+
+			document
+				.querySelector(".btn-fechar")
+				.addEventListener("click", () => nav.classList.add("fechado"));
+			document
+				.querySelector(".btn-toggle")
+				.addEventListener("click", () => nav.classList.remove("fechado"));
+		</script>
+	</body>
+</html>
